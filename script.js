@@ -349,12 +349,12 @@ function functionDeDeclaracion() {
 }
 
 // expression (no es muy usada)
-let functionDeExpresion = function() {
+const functionDeExpresion = function() {
   // codigo y return
 }
 
 // de flecha (se usa mucho especificamente es casos de callbacks)
-let functionDeFlecha = () => {
+const functionDeFlecha = () => {
   // codigo y return
 }
 

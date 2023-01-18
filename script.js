@@ -265,3 +265,99 @@ for (let index = 0; index < array1.length; index++) {
 }
 
 console.log("los arrays tienen los mismos valores? ", check)
+
+
+
+// FUNCIONES
+
+
+// declaracion de una funcion
+
+function nombreDeFunction( /* optionalmente tendremos parametros */ ) {
+  // multiples lineas de código a ejecutar (deberan utilizar los valores de los parametros)
+
+  // return valor // opcionalmente retornaremos algo de la funcion
+}
+
+// ejecución de la funcion
+nombreDeFunction( /* opcionalmente ciertos argumentos */ )
+
+
+
+function decirHola( name, candy ) {
+  // let name = "Bob" o "Sarah" o "Carolina"
+  // console.log(name)
+  console.log(`Hola ${name}, tienes ${candy} caramelitos`)
+
+}
+
+
+decirHola("Bob", 30)
+decirHola("Sarah", 10)
+decirHola("Carolina", 15)
+decirHola("Adria", 22)
+decirHola("Ruth")
+
+
+
+function addNumbers(num1, num2) {
+
+  // console.log(num1 + num2)
+  let sum = num1 + num2
+  return sum;
+
+}
+
+let resultOfFunction = addNumbers(5, 4)
+// que pasa si yo necesito ese numero para algo fuera de la funcion
+
+// si la suma es mayor a 10, entonces console.log "el numero es muy alto"
+console.log(resultOfFunction)
+if (resultOfFunction > 10) {
+  console.log(`el resultado es ${resultOfFunction}. Lo cual es muy alto`)
+} else {
+  console.log(`el resultado es ${resultOfFunction}. Esta por debajo de 10. Todo bien`)
+}
+
+
+
+// function que debe capitalizar una palabra
+
+let arrayOfStaff = ["carolina", "adria", "ruth"]
+
+function capitalizeWord(string) {
+  // logica para capitalizar una palabra
+  let newStr = string[0].toUpperCase() + string.slice(1)
+  // retornar la palabra
+  return newStr;
+}
+
+let staff1 = capitalizeWord( arrayOfStaff[0] )
+let staff2 = capitalizeWord( arrayOfStaff[1] )
+let staff3 = capitalizeWord( arrayOfStaff[2] )
+
+console.log(`El staff de Ironhack esta comprendido por ${staff1}, ${staff2} y ${staff3}`)
+
+
+
+// TIPOS DE FUNCIONES
+
+
+// declaracion (tradicional y se usa bastante)
+function functionDeDeclaracion() {
+  // codigo y return
+}
+
+// expression (no es muy usada)
+let functionDeExpresion = function() {
+  // codigo y return
+}
+
+// de flecha (se usa mucho especificamente es casos de callbacks)
+let functionDeFlecha = () => {
+  // codigo y return
+}
+
+functionDeDeclaracion()
+functionDeExpresion()
+functionDeFlecha()

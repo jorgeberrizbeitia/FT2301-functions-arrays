@@ -361,3 +361,114 @@ const functionDeFlecha = () => {
 functionDeDeclaracion()
 functionDeExpresion()
 functionDeFlecha()
+
+
+
+
+
+
+// Actividad
+
+// crear una function que reciba una palabra y debe remover todos los espacios vacios de la palabra
+// "ba na na ra ma   " => "bananarama"
+
+function noSpaces(string) {
+
+  let newWord = "";
+
+  // iterar sobre cada caracter del string
+  for (let character of string) {
+    // revisar cuales son espacios en blanco
+    if (character !== " ") {
+      // console.log(character)
+      // recreamos un string que no tenga los espacios
+      newWord = newWord + character
+    }
+  }
+
+
+  // retornar el string
+  return newWord;
+
+}
+
+
+// test
+console.log( noSpaces("hola y adios") ) // "holayadios"
+console.log( noSpaces("ba na na ra ma   ") ) // "bananarama"
+
+
+
+
+function noSpaces2(string) {
+
+  let newWord = "";
+
+  // iterar sobre cada caracter del string
+  for (let character of string) {
+
+    if (character === " ") {
+      continue;
+    }
+
+    newWord += character
+  }
+
+
+  // retornar el string
+  return newWord;
+
+}
+
+
+// test
+console.log( noSpaces2("hola y adios") ) // "holayadios"
+console.log( noSpaces2("ba na na ra ma   ") ) // "bananarama"
+
+
+
+
+// Ejercicio 2
+
+let veggies = ["patata", "lechuga", "cebolla", "tomate", "cebolla"];
+
+// crear una funcion que reciba 2 parametros
+// 1. un array de vegetales,
+// 2. un vegetal especifico String.
+// si el vegetal esta en el array debe retornar un mensaje que diga. hay X cantidad de ese vegetal en el array.
+// si no hay de ese vegetal, retornar un mensaje que diga. "No hay vegetales, anda a comprar!"
+// BONUS. Si el array de vegetales está vacio. decir: "NO HAY NADA EN LA BOLSA!"
+
+
+function findVegetal(veggieArray, oneVeggie) {
+
+  // veggieArray = []
+  // CLAUSULAS DE GUARDIA
+  if (veggieArray.length === 0) {
+    return "NO HAY NADA EN LA BOLSA!"
+  }
+
+  let count = 0;
+
+  // iterar sobre el array de vegetales
+  for (let i = 0; i < veggieArray.length; i++) {
+    // llevar una cuenta de cuantas veces encuentra el oneVeggie
+    if (veggieArray[i] === oneVeggie) {
+      count++;
+    }
+    
+  }
+  if (count === 0) {
+    // console.log("No hay de ese vegetales, anda a comprar")
+    return "No hay de ese vegetales, anda a comprar!"
+  } else {
+    // console.log(`hay ${count} de ${oneVeggie} en el array.`)
+    return `hay ${count} de ${oneVeggie} en el array.`
+  }
+}
+
+// test
+let mensajeAMostrasAlUsuario = findVegetal(veggies, "cebolla")
+console.log(mensajeAMostrasAlUsuario)
+
+console.log( findVegetal([], "tomate") )

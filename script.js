@@ -116,3 +116,58 @@ console.log(includesBrasil)
 
 let includesFrance = countries.includes("Francia")
 console.log(includesFrance)
+
+
+
+// mutabilidad en strings
+
+let word = "bananarama";
+
+console.log(word[0])
+word[0] = "B"; // los strings no son mutables
+
+console.log(word);
+
+
+// mutabilidad en arrays
+
+let friends = ["Ross", "Phoebe", "Chandler", "Monica", "Rachel", "Joey"];
+
+friends[0] = "Mike"; // los arrays SON mutables
+
+console.log(friends)
+
+let twoFriends = friends.slice(0, 2);
+
+console.log(friends)
+
+// aunque los arrays son mutables, no todos los metodos mutan el array
+
+
+let removedFriend = friends.pop() // remover el ultimo elemento
+console.log("despues del pop", friends)
+console.log("amigo removido", removedFriend)
+
+let removedFriendStart = friends.shift() // remover el primer elemento
+console.log("despues del shift", friends)
+console.log("amigo removido", removedFriendStart)
+
+
+
+friends.push("Gunther") // añadir al final del array
+console.log("despues del push", friends)
+
+friends.unshift("Janice") // añadir al inicio del array
+console.log("despues del unshift", friends)
+
+
+// SPLICE (3 argumentos)
+
+// 1. indice inicial donde hará la modificacion
+// 2. cantidad de elementos a eliminar
+// 3.4.5.6 Elementos a agregar desde la posición indicada
+
+let removedFriends = friends.splice(2, 2, "Emily", "Robert")
+console.log("despues del splice", friends)
+console.log(removedFriends)
+

@@ -171,3 +171,97 @@ let removedFriends = friends.splice(2, 2, "Emily", "Robert")
 console.log("despues del splice", friends)
 console.log(removedFriends)
 
+
+
+// REFERENCIAS EN JS
+
+
+let age1 = 42;
+let age2 = 42;
+
+console.log(age1 === age2)
+console.log("hola" === "hola")
+
+
+let arr1 = [20, 24, 32]; // ref. 1234
+let arr2 = [20, 24, 32]; // ref. abcd
+
+console.log( arr1 === arr2 ) // .? // false
+
+// cuando comparamos objetos en JS, se comparan las referencias.
+// cuando comparamos data primitiva, se compara el valor.
+
+console.log( arr1[0] === arr2[0] ) // true
+
+
+let arr3 = arr1; // SUPER MALA PRACTICA. pero js lo realiza tras camaras en algunos casos.
+// JS esta asignando la misma referencia que arr1 a arr3
+
+
+
+// arr3.pop() // remueve el ultimo elemento
+
+console.log(arr3)
+console.log(arr1)
+
+console.log(arr3 === arr1) // true, tienen la misma referencia
+
+
+
+
+// Diferentes formas de copiar elementos de un arr
+
+// quiero que arr4 tenga los mismos elementos que arr1 pero que sea un nuevo arr (nueva referencia)
+
+
+//1. slice()
+let arr4 = arr1.slice(0)
+console.log(arr4)
+
+console.log(arr4 === arr1) // false. tienen diferentes referencias.
+
+let arr5 = [];
+
+// 2. con loops
+for (let i = 0; i < arr1.length; i++) {
+  arr5.push(arr1[i])
+  // arr5 += arr1[i] // concatenar convertiria el arr en string
+}
+
+console.log(arr5)
+
+console.log(arr5 === arr1) // false. tienen diferentes referencias.
+
+
+// 3. otra forma es con el metodo .map() // lo veremos el lunes
+
+// 4. structuredClone()
+
+let arr6 = structuredClone(arr1) // pasamos el array a clonar
+
+console.log(arr6)
+console.log(arr6 === arr1) // false. tienen diferentes referencias
+
+
+// 5. otra forma es usando un conjunto de metodos llamados JSON.parse() y JSON.stringify.
+
+
+
+// como verificar valores internos de un arr
+
+let array1 = [5, "hola", true];
+let array2 = [5, "adios", true];
+
+let check = true;
+
+for (let index = 0; index < array1.length; index++) {
+  // console.log(index)
+  // console.log(array1[index])
+  // console.log(array1[index] === array2[index])
+  console.log(index)
+  if (array1[index] !== array2[index]) {
+    check = false
+  }
+}
+
+console.log("los arrays tienen los mismos valores? ", check)
